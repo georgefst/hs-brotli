@@ -126,6 +126,7 @@ defaultSettings =
     , "application/javascript"
     , "application/x-javascript"
     , "application/ecmascript"
+    , "application/wasm"
     , "application/xml"
     , "application/x-font-ttf"
     , "image/x-icon"
