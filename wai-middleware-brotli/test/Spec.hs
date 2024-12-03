@@ -18,6 +18,7 @@ import Test.Tasty.HUnit
 import Test.Tasty.Hspec
 import System.IO
 import System.IO.Error
+import Test.Hspec
 
 main :: IO ()
 main = do

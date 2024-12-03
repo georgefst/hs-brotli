@@ -46,6 +46,7 @@ test-suite wai-middleware-brotli-test
   build-depends:       base
                      , hs-brotli
                      , bytestring
+                     , hspec
                      , http-types
                      , mtl
                      , tasty
