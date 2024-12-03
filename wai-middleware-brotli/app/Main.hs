@@ -13,12 +13,7 @@ main :: IO ()
 main = do
   let settings =
         B.defaultSettings
-        {B.brotliFilesBehavior = B.BrotliPreCompressed (B.BrotliCacheFolder "."), B.brotliMinimumSize = 5}
-      -- app = staticApp $ defaultFileServerSettings "."
-      app = \req respond -> respond $ responseStream ok200 [("Content-Type", "text/wow")] $ \send flush -> do
-        send "Hello"
-        flush
-        threadDelay 10000000
-        send "World"
+        {B.brotliFilesBehavior = B.BrotliPreCompressed B.BrotliIgnore, B.brotliMinimumSize = 5}
+      app = staticApp $ defaultWebAppSettings "."
 
   runEnv 3000 (gzip def {- TODO replace gzip with zopfli -} $ B.brotli settings {- $ sdch sdchSettings -} $ app)
