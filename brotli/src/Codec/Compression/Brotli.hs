@@ -114,7 +114,7 @@ instance Compress B.ByteString B.ByteString where
     pure res
 
 isTrue :: CInt -> Bool
-isTrue (CInt (I32# x)) = isTrue# x
+isTrue = (/= 0)
 
 maxCompressedSize :: Int -> Int
 maxCompressedSize = fromIntegral . I.maxCompressedSize . fromIntegral
